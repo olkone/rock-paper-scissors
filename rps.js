@@ -12,28 +12,23 @@ function computerPlay() {
 
 function playerPlay() {
 
-    // Initialize variables
     let playerChoice;
-    let inArray = false;
+    let inArray;
 
-    // Loop through player response prompt until the first letter of the input string is either 'r', 'p', or 's'
-    while (inArray === false) {
-    
-    // Prompt player for input; make it all lowercase and get only the first character
-    playerChoice = prompt("Rock, Paper, or Scissors?: ").toLowerCase().charAt(0);
+    // Changed to "do while" loop since the loop has to execute at least once
 
-    // Validate whether first letter of the player's input is in the array
-    // If so, the while-loop ends
-    // If not, keep prompting the player
-    if (['r', 'p', 's'].includes(playerChoice) === true) {
-        inArray = true;
-    } else {
-        inArray = false;
-    }
+    do {
+        playerChoice = prompt("Rock, Paper, or Scissors?: ").toLowerCase().charAt(0);
 
-    }
+        // Validates player response
+        if (['r', 'p', 's'].includes(playerChoice) === true) {
+            inArray = true;
+        } else {
+            console.log("Invalid input. Try again.")
+            inArray = false;
+        }
+    } while (inArray === false);
 
-    // return the player's choice after validation
     return playerChoice;
 
 }

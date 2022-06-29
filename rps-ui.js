@@ -66,8 +66,9 @@ let playerScore = 0;
 let computerScore = 0;
 
 function game(e) {
-    
-    const winner = document.querySelector('#winner');
+
+    const winner = document.querySelector('#winner h2');
+    const refresh = document.querySelector('#refresh');
 
     if (playerScore < 5 && computerScore < 5) {
 
@@ -79,10 +80,13 @@ function game(e) {
     
     if (playerScore > computerScore && playerScore === 5) {
         winner.innerText = "PLAYER WINS";
+        refresh.classList.remove("hidden");
+
     } else if (computerScore > playerScore && computerScore === 5) {
         winner.innerText = "COMPUTER WINS";
+        refresh.classList.remove("hidden");
     }
 }
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.play');
 buttons.forEach(button => button.addEventListener('click', game));

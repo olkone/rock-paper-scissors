@@ -2,6 +2,8 @@
 const pScore = document.createElement('p');
 const cScore = document.createElement('p');
 const roundResult = document.createElement('p');
+const pWin = document.createElement('h2');
+const cWin = document.createElement('h2');
 
 function computerPlay() {
 
@@ -14,15 +16,6 @@ function computerPlay() {
     // Index into the array with the random index number
     return plays[randomIndex];
 }
-
-function playerSelection(e) {
-    return e.target.value;
-}
-
-
-// Initialize scores to 0 points each
-let playerScore = 0;
-let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     const status = document.querySelector('#status');
@@ -83,16 +76,27 @@ function playRound(playerSelection, computerSelection) {
     status.appendChild(roundResult);
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function game(e) {
+    const winner = document.querySelector('#winner');
+    pWin.textContent = "Player Wins!!!!!"
+    cWin.textContent = "Computer Wins!!!!!"
 
-    // Set variables for play selection for player and computer
-    let playerSelection = e.target.value;
-    let computerSelection = computerPlay();
+    if (playerScore < 5 && computerScore < 5) {
 
-    // Run playRound and show results
-    console.log(playRound(playerSelection, computerSelection));
+        let playerSelection = e.target.value;
+        let computerSelection = computerPlay();
+
+        playRound(playerSelection, computerSelection);
+    } 
     
-
+    if (playerScore > computerScore && playerScore === 5) {
+        winner.appendChild(pWin);
+    } else if (computerScore > playerScore && computerScore === 5) {
+        winner.appendChild(cWin);
+    }
 }
 
 const buttons = document.querySelectorAll('button');

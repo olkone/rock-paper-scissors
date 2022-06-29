@@ -1,10 +1,3 @@
-
-const pScore = document.createElement('p');
-const cScore = document.createElement('p');
-const roundResult = document.createElement('p');
-const pWin = document.createElement('h2');
-const cWin = document.createElement('h2');
-
 function computerPlay() {
 
     // Make an array of play choices (r=rock, p=paper, s=scissors)
@@ -18,13 +11,10 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    const status = document.querySelector('#status');
-    const player = document.querySelector('#player');
-    const computer = document.querySelector('#computer');
+
     let result;
 
     // Check through each possible choice combination
-    // Declare a round winner and allot a point
     switch (playerSelection + computerSelection) {
         default:
             result = "Something went wrong.";
@@ -66,23 +56,18 @@ function playRound(playerSelection, computerSelection) {
             result = "Scissors beats paper. Player wins!";
             break;
     }
-    
-    roundResult.textContent = result;
-    pScore.textContent = playerScore;
-    cScore.textContent = computerScore;
 
-    player.appendChild(pScore);
-    computer.appendChild(cScore);
-    status.appendChild(roundResult);
+    document.querySelector('#player').innerText = playerScore;
+    document.querySelector('#computer').innerText = computerScore;
+    document.querySelector('#status').innerText = result;
 }
 
 let playerScore = 0;
 let computerScore = 0;
 
 function game(e) {
+    
     const winner = document.querySelector('#winner');
-    pWin.textContent = "Player Wins!!!!!"
-    cWin.textContent = "Computer Wins!!!!!"
 
     if (playerScore < 5 && computerScore < 5) {
 
@@ -93,9 +78,9 @@ function game(e) {
     } 
     
     if (playerScore > computerScore && playerScore === 5) {
-        winner.appendChild(pWin);
+        winner.innerText = "PLAYER WINS";
     } else if (computerScore > playerScore && computerScore === 5) {
-        winner.appendChild(cWin);
+        winner.innerText = "COMPUTER WINS";
     }
 }
 

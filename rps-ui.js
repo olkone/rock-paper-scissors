@@ -1,58 +1,80 @@
 function computerPlay() {
-
-    // Make an array of play choices (r=rock, p=paper, s=scissors)
     const plays = ['r', 'p', 's'];
-
-    // Choose a random number in the length of the above array
     const randomIndex = Math.floor(Math.random() * plays.length);
     
-    // Index into the array with the random index number
-    return plays[randomIndex];
+    let compChoice = plays[randomIndex];
+
+    return compChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
+    const playerIcon = document.querySelector('#player-icon');
+    const compIcon = document.querySelector('#comp-icon');
 
     let result;
 
-    // Check through each possible choice combination
     switch (playerSelection + computerSelection) {
         default:
-            result = "Something went wrong.";
+            result = "Something went wrong 😖";
             break;
 
         case "rr":
+            playerIcon.innerText = '👊';
+            compIcon.innerText = '👊';
+            result = "It's a draw!";
+            break;
+
         case "pp":
+            playerIcon.innerText = '✋';
+            compIcon.innerText = '✋';
+            result = "It's a draw!";
+            break;
+
         case "ss":
+            playerIcon.innerText = '✌️';
+            compIcon.innerText = '✌️';
             result = "It's a draw!";
             break;
         
         case "rp":
             computerScore++;
+            playerIcon.innerText = '👊';
+            compIcon.innerText = '✋';
             result = "Paper beats rock. Computer wins!";
             break;
         
         case "rs":
             playerScore++;
+            playerIcon.innerText = '👊';
+            compIcon.innerText = '✌️';
             result = "Rock beats scissors. Player wins!";
             break;
         
         case "pr":
             playerScore++;
+            playerIcon.innerText = '✋';
+            compIcon.innerText = '👊';
             result = "Paper beats rock. Player wins!";
             break;
         
         case "ps":
             computerScore++;
+            playerIcon.innerText = '✋';
+            compIcon.innerText = '✌️';
             result = "Scissors beats paper. Computer wins!";
             break;
         
         case "sr":
             computerScore++;
+            playerIcon.innerText = '✌️';
+            compIcon.innerText = '👊';
             result = "Rock beats scissors. Computer wins!";
             break;
 
         case "sp":
             playerScore++;
+            playerIcon.innerText = '✌️';
+            compIcon.innerText = '✋';
             result = "Scissors beats paper. Player wins!";
             break;
     }
@@ -60,6 +82,8 @@ function playRound(playerSelection, computerSelection) {
     document.querySelector('#player').innerText = playerScore;
     document.querySelector('#computer').innerText = computerScore;
     document.querySelector('#status').innerText = result;
+
+
 }
 
 let playerScore = 0;

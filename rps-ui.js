@@ -1,28 +1,34 @@
+const buttons = document.querySelectorAll('.choice-buttons');
+const playerIcon = document.querySelector('#player-icon');
+const compIcon = document.querySelector('#comp-icon');
+const replay = document.querySelector('#replay');
+
+const winSuffix = [" Good guess.", " You got lucky.", " Bet you can't do that again.", " You got me.", " Lucky guess.", " Look at you go."];
+
+const loseSuffix = [" I got lucky.", " That was easy.", " You're so predictable.", " Are you even trying?", " Maybe I can read your mind.", " I won this round."];
+
+const tie = ["It's a draw.", "Looks the same to me.", "Great minds think alike.", "Looks like we tied.", "Let's try that again.", "One more time.", "Tie.", "Draw.", "That's a tie right there."];
+
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
     const plays = ['r', 'p', 's'];
-    const randomIndex = Math.floor(Math.random() * plays.length);
+    const randomCompChoice = Math.floor(Math.random() * plays.length);
     
-    let compChoice = plays[randomIndex];
+    return plays[randomCompChoice];
+}
 
-    return compChoice;
+function hideButtons() {
+    buttons.forEach(button => {
+        button.classList.add("hidden");
+    });
 }
 
 function playRound(playerSelection, computerSelection) {
-    const playerIcon = document.querySelector('#player-icon');
-    const compIcon = document.querySelector('#comp-icon');
-    const winner = document.querySelector('#winner p');
-    const refresh = document.querySelector('#refresh');
-
-    const tie = ["It's a draw.", "Looks the same to me.", "Great minds think alike.", "Looks like we tied.", " Let's try that again.", " One more time."];
-
+    const status = document.querySelector('#status');
     let randomTie = tie[Math.floor(Math.random() * tie.length)];
-
-    const winSuffix = [" Good guess.", " You got lucky.", " Bet you can't do that again.", " You got me.", " Lucky guess.", " Look at you go."];
-
     let randomWinSuffix = winSuffix[Math.floor(Math.random() * winSuffix.length)];
-
-    const loseSuffix = [" I got lucky.", " That was easy.", " You're so predictable.", " Are you even trying?", " Maybe I can read your mind."];
-
     let randomLoseSuffix = loseSuffix[Math.floor(Math.random() * loseSuffix.length)];
 
     let result;
@@ -95,34 +101,35 @@ function playRound(playerSelection, computerSelection) {
 
     switch (true) {
         case (playerScore === 5):
-            result = "You won."
-            refresh.classList.remove("hidden");
-            break;
-        case (computerScore === 5):
-            result = "You lost."
-            refresh.classList.remove("hidden");
+            status.classList.add("win-game");
+            result = "You won.";
+            replay.classList.remove("hidden");
+            hideButtons();
             break;
 
+        case (computerScore === 5):
+            status.classList.add("lose-game");
+            result = "You lost.";
+            replay.classList.remove("hidden");
+            hideButtons();
+            break;
+            
         case (playerScore === 4 && computerScore === 4):
             result = "It all comes down to this. Choose wisely.";
             break;
 
         case (playerScore === 4):
-            result = "Just one more to go.";
+            result = "Just one more to go. I can't believe it's come to this";
             break;
 
         case (computerScore === 4):
             result = "Don't mess up. I'm only one guess away.";
-            break;    
+            break;
     }
-
     document.querySelector('#player').innerText = playerScore;
     document.querySelector('#computer').innerText = computerScore;
     document.querySelector('#status').innerText = result;
 }
-
-let playerScore = 0;
-let computerScore = 0;
 
 function game(e) {
     if (playerScore < 5 && computerScore < 5) {
@@ -130,8 +137,7 @@ function game(e) {
         let computerSelection = computerPlay();
 
         playRound(playerSelection, computerSelection);
-    } 
+    }
 }
 
-const buttons = document.querySelectorAll('.choice-buttons');
 buttons.forEach(button => button.addEventListener('click', game));

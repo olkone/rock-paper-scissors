@@ -3,6 +3,7 @@ body {
     color:rgb(233, 233, 233);
     display: flex;
     flex-flow: column nowrap;
+    font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     text-align: center;
     width: 100%;
@@ -29,6 +30,20 @@ button {
     width: 6em;
 }
 
+#winner {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .hidden {
     display: none;
+}
+
+.win-game {
+    color: limegreen;
+}
+
+.lose-game {
+    color: red;
 }

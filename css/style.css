@@ -1,3 +1,22 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInSlow {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   background-color: rgb(36, 36, 41);
   color: rgb(233, 233, 233);
@@ -9,8 +28,23 @@ body {
   width: 100%;
 }
 
+h1 {
+  animation: fadeIn 2s;
+}
+
+body p {
+  animation: fadeIn 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
 #icon-container,
 #score-container {
+  animation: fadeIn 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
   align-items: center;
   display: flex;
   flex: 1;
@@ -19,6 +53,10 @@ body {
 }
 
 #button-container {
+  animation: fadeIn 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
   display: inline-flex;
   gap: 3em;
   justify-content: center;
@@ -38,6 +76,13 @@ button {
 
 .hidden {
   display: none;
+}
+
+.end-game {
+  animation: fadeIn 4s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .win-game {

@@ -11,14 +11,17 @@
 <body>
     <h1>Rock, Paper, Scissors</h1>
     <p id="status">Choose a button to start:</p>
-    <div id="icon-container">
-        <p class="rps-icon" id="player-icon"></p>
-        <p class="rps-icon" id="comp-icon"></p>
-    </div>
-    <div id="score-container">
-            <p id="player">0</p>
-            <p>:</p>
-            <p id="computer">0</p>
+    <div id="player-container">
+        <div class="player-info">
+            <p class="rps-icon" id="player-icon">👋</p>
+            <p class="names" id="player-name">Player</p>
+            <p class="scores" id="player-score">0</p>
+        </div>
+        <div class="player-info">
+            <p class="rps-icon" id="comp-icon">🤖</p>
+            <p class="names" id="comp-name">Computer</p>
+            <p class="scores" id="comp-score">0</p>
+        </div>
     </div>
     <div id="button-container">
         <button class="choice-buttons" value="r">Rock</button>

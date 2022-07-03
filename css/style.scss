@@ -10,13 +10,15 @@
 }
 
 body {
+    align-items: center;
     background-color: rgb(36, 36, 41);
     color:rgb(233, 233, 233);
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     font-family: 'Courier New', Courier, monospace;
-    justify-content: center;
     text-align: center;
+    margin: 0;
+    padding: 0;
     width: 100%;
 }
 
@@ -31,19 +33,47 @@ body p {
     opacity: 0;
 }
 
+#player-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    justify-content: center;
+    min-width: 20em;
+    max-width: 30em;
+}
 
-#icon-container,
-#score-container {
+.player-info {
     animation: fadeIn 2s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
     opacity: 0;
 
-    align-items: center;
     display: flex;
     flex: 1;
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: column nowrap;
+    gap: 0;
+    margin: -4em;
+}
+
+.rps-icon {
+    font-size: 80px;
+}
+
+#comp-icon {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+.names {
+    margin: -4em;
+}
+
+.scores {
+    margin: 6em;
 }
 
 #button-container {
@@ -53,8 +83,13 @@ body p {
     opacity: 0;
 
     display: inline-flex;
-    gap: 3em;
+    gap: 2em;
     justify-content: center;
+}
+
+#button-container,
+#replay-container {
+    margin: 1em 0;
 }
 
 button {

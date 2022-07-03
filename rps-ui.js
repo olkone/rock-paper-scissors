@@ -103,6 +103,7 @@ function playRound(playerSelection, computerSelection) {
         case (playerScore === 5):
             status.classList.add("win-game");
             result = "You won.";
+            replay.classList.add("end-game");
             replay.classList.remove("hidden");
             hideButtons();
             break;
@@ -110,6 +111,7 @@ function playRound(playerSelection, computerSelection) {
         case (computerScore === 5):
             status.classList.add("lose-game");
             result = "You lost.";
+            replay.classList.add("end-game");
             replay.classList.remove("hidden");
             hideButtons();
             break;
@@ -119,7 +121,7 @@ function playRound(playerSelection, computerSelection) {
             break;
 
         case (playerScore === 4):
-            result = "Just one more to go. I can't believe it's come to this";
+            result = "Just one more to go.";
             break;
 
         case (computerScore === 4):

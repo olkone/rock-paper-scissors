@@ -128,8 +128,8 @@ function playRound(playerSelection, computerSelection) {
             result = "Don't mess up. I'm only one guess away.";
             break;
     }
-    document.querySelector('#player').innerText = playerScore;
-    document.querySelector('#computer').innerText = computerScore;
+    document.querySelector('#player-score').innerText = playerScore;
+    document.querySelector('#comp-score').innerText = computerScore;
     document.querySelector('#status').innerText = result;
 }
 

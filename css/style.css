@@ -1,6 +1,36 @@
 body {
   background-color: rgb(36, 36, 41);
   color: rgb(233, 233, 233);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+#icon-container,
+#score-container {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+#button-container {
+  display: inline-flex;
+  gap: 3em;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 4px;
+  width: 6em;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

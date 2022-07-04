@@ -34,13 +34,13 @@ body {
 }
 
 h1 {
-    animation: fadeIn 3s;
+    animation: fadeIn 2s;
     font-size: 36px;
 }
 
 body p {
     animation: fadeIn 2s;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     opacity: 0;
 }
@@ -58,7 +58,7 @@ body p {
 
 .player-info {
     animation: fadeIn 2s;
-    animation-delay: 2.75s;
+    animation-delay: 2.25s;
     animation-fill-mode: forwards;
     opacity: 0;
 
@@ -93,7 +93,7 @@ body p {
 
 #button-container {
     animation: fadeIn 2s;
-    animation-delay: 3.5s;
+    animation-delay: 2.25s;
     animation-fill-mode: forwards;
     opacity: 0;
 

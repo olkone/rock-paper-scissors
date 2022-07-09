@@ -13,7 +13,7 @@ My take on *Rock, Paper, Scissors* was created with HTML, CSS, and vanilla JavaS
 ## Code Features
 *The following features were the main concepts I learned and implemented in this project.*
 
-### HTML & (S)CSS:
+### HTML & CSS:
 
 * Flex display
 * Dynamic element transformations with transition duration on hover, click
@@ -40,6 +40,9 @@ My take on *Rock, Paper, Scissors* was created with HTML, CSS, and vanilla JavaS
 
 # 
 ## Check out some of my other projects!
+* JavaScript Calculator
+   * [Live Page](https://olkone.github.io/calculator/)
+   * [Repository](https://github.com/olkone/calculator)
 * Python Typing Game
     * [Repository](https://github.com/olkone/typing-game)
 * Sketch!

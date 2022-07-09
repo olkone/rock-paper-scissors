@@ -32,6 +32,9 @@ My take on *Rock, Paper, Scissors* was created with HTML, CSS, and vanilla JavaS
     * Update status, icon, and score inner text
     * Add and remove class lists to trigger CSS properties
 
+## Reflection
+* The biggest change I need to make, as the program currently stands, is to restart gameplay without reloading the entire webpage. I will need to rework and reorganize my code so that the game starts on a function call rather than on page load.
+
 ## Development Tools
 * VS Code
 * Git/GitHub

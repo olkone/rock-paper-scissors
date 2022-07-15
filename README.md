@@ -43,11 +43,17 @@ My take on *Rock, Paper, Scissors* was created with HTML, CSS, and vanilla JavaS
 
 # 
 ## Check out some of my other projects!
+* Admin Dashboard
+    * [Live Page](https://olkone.github.io/admin-dashboard/)
+    * [Repository](https://github.com/olkone/admin-dashboard)
 * JavaScript Calculator
    * [Live Page](https://olkone.github.io/calculator/)
    * [Repository](https://github.com/olkone/calculator)
 * Python Typing Game
     * [Repository](https://github.com/olkone/typing-game)
+* Sign-Up Form
+    * [Live Page](https://olkone.github.io/sign-up-form/)
+    * [Repository](https://github.com/olkone/sign-up-form)
 * Sketch!
     * [Live Page](https://olkone.github.io/sketch/)
     * [Repository](https://github.com/olkone/sketch/)
